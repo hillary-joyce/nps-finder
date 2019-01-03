@@ -1,5 +1,6 @@
 import React from 'react';
 import parkData from '../npsData';
+import {Link} from 'react-router-dom';
 
 import Header from '../components/header';
 import ParkCard from '../components/parkCard';
@@ -9,19 +10,16 @@ import SearchBar from '../components/searchBar';
 
 class IndexPage extends React.Component {
   state = {
-    currentParks: []
+    currentParks: [],
+    currentType: ''
   }
 
   findParks = (e) => {
     let event = e.target.value.toLowerCase()
-    let foundParks = parkData.filter(park => park.state.toLowerCase().includes(event))
+    let foundParks = parkData.filter(park => park.state.toLowerCase().includes(event)|| park.fullName.toLowerCase().includes(event))
     this.setState({
       currentParks: foundParks
     })
-  }
-
-  showPark = () => {
-
   }
 
   render(){
@@ -31,8 +29,10 @@ class IndexPage extends React.Component {
         <SearchBar searchStates={this.findParks}/>
         <ParkContainer>
           {this.state.currentParks.map(park => (
-            <ParkCard key={park.id} showParkDetail={this.showPark} park={park}/>
-          ))}
+            <Link to={`/park-details/${park.id}`}>
+              <ParkCard key={park.id} park={park}/>
+            </Link>
+        ))}
         </ParkContainer>
       </div>
     )

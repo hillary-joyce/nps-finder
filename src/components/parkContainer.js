@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ParkContainer = props => (
-  <div className="parkContainer">
+  <div className="park-container">
     {props.children}
   </div>
 )
