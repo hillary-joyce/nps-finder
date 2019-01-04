@@ -3,7 +3,9 @@
 Check out the project [here](http://national-park-finder.surge.sh/)
 
 ## Motivation
-I love the US National Park Service, and spend any nice weekend I can visting them to hike with my dog. But I felt like thier nationa
+I love the US National Park Service, and spend any nice weekend I can visting them to hike with my dog. But I felt like thier national park finding feature was a little outdated - the search was a little cumbersome and the interface, while easy to use, was very basic. I thought a fresh, modern look could help inspire people to visit the parks.
+
+Because of the shutdown, I was worried about the NPS API going down, so I saved their data in a JS file locally.
 
 ## How it Works
 When you visit the [National Park Finder](http://national-park-finder.surge.sh/) on the homepage you will see a search bar that allows you to search by the park name or State.
